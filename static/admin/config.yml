@@ -41,8 +41,9 @@ collections: # A list of collections the CMS should be able to edit
     label: "Metadata & Navigation"
     description: "Pages Metadatas"
     folder: "src/metadata"
-    create: true
+    create: false
     fields:
+      - { label: 'Update Metadata & Navigation', name: 'title', widget: 'string',  default: "Metadata & Navigation" }
       - label: "MetaData's"
         name: "metadata"
         widget: "object"
@@ -134,7 +135,7 @@ collections: # A list of collections the CMS should be able to edit
       preview: false
     files:
       - name: 'wherenandwhen'
-        label: 'Edit Address and Contact info'
+        label: 'Update Address and Contact info'
         file: '_data/whereandwhen.json'
         description: 'General Info'
         fields:
