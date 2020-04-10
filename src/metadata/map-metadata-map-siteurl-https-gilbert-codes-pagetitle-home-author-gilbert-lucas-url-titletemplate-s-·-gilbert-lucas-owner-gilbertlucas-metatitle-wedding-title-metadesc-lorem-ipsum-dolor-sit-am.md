@@ -1,5 +1,5 @@
 ---
-title: Metadata & Navigation
+title: Update Metadata & Navigation
 metadata:
   siteUrl: https://gilbert.codes
   pagetitle: home
