@@ -40,54 +40,45 @@ collections: # A list of collections the CMS should be able to edit
     folder: "src/metadata"
     create: true
     fields:
-      - {
-          label: MetaData's,
-          name: metadata,
-          required: true,
-          widget: list,
-          fields:
-            [
-              { label: "Meta Title", name: "metatitle", widget: "string" },
-              { label: "Title Template", name: "titleTemplate", widget: "hidden", default: "%s · Gilbert Lucas" },
-              { label: "About Description", name: metadesc, widget: 'markdown' },
-              { label: "Author", name: "author", widget: "hidden", default: "Gilbert lucas" },
-              { label: "url", name: "url", widget: "hidden", default: "https://gilbert.codes" },
-              { label: "siteUrl", name: "siteUrl", widget: "hidden", default: "https://gilbert.codes" },
-              {
-                label: Image,
-                name: image,
-                required: false,
-                hint: "Image for the page",
-                widget: image,
-              },
-              { label: "Owner", name: "owner", widget: "hidden", default: "Gilbertlucas" },
-              { label: "Page name", name: "pagetitle", widget: "string" },
-              { label: "twitterUsername", name: "url", widget: "hidden", default: "@gilbertlucas14" },
-              { label: "facebookAppID", name: "url", widget: "hidden", default: " " }
-            ]
+      - label: "MetaData's"
+        name: "metadata"
+        widget: "object"
+        fields:
+          - { label: "Meta Title", name: "metatitle", widget: "string" }
+          - { label: "Title Template", name: "titleTemplate", widget: "hidden", default: "%s · Gilbert Lucas" }
+          - { label: "About Description", name: metadesc, widget: 'markdown' }
+          - { label: "Author", name: "author", widget: "hidden", default: "Gilbert lucas" }
+          - { label: "url", name: "url", widget: "hidden", default: "https://gilbert.codes" }
+          - { label: "siteUrl", name: "siteUrl", widget: "hidden", default: "https://gilbert.codes" }
+          - {
+            label: Image,
+            name: image,
+            required: false,
+            hint: "Image for the page",
+            widget: image,
           }
-      - {
-          label: Menu Links,
-          name: menuLinks,
-          required: true,
-          widget: list,
-          fields:
-            [
-              { label: "Page Name", name: "name", widget: "string" },
-              { label: "Link to", name: link, widget: 'string' }
-            ]
-          }
-      - {
-          label: Social Channels,
-          name: socialChannels,
-          required: true,
-          widget: list,
-          fields:
-            [
-              { label: "Social Name", name: "name", widget: "string" },
-              { label: "Link to", name: link, widget: 'string' }
-            ]
-          }
+          - { label: "Owner", name: "owner", widget: "hidden", default: "Gilbertlucas" }
+          - { label: "Page name", name: "pagetitle", widget: "string" }
+          - { label: "twitterUsername", name: "url", widget: "hidden", default: "@gilbertlucas14" }
+          - { label: "facebookAppID", name: "url", widget: "hidden", default: " " }
+
+      - label: "Menu Links"
+        name: "menuLinks"
+        widget: "list"
+        fields:
+          [
+            { label: "Page Name", name: "name", widget: "string" },
+            { label: "Link to", name: link, widget: 'string' }
+          ]
+
+      - label: "Social Channels"
+        name: "socialChannels"
+        widget: "list"
+        fields:
+          [
+            { label: "Social Channel Name", name: "name", widget: "string" },
+            { label: "Link to", name: link, widget: 'string' }
+          ]
 
   - name: 'about'
     label: 'About Us'
