@@ -1,0 +1,179 @@
+backend:
+  name: github
+  branch: master
+  repo: gilbertlucas46/gimilove
+
+media_folder: static/img
+public_folder: /img
+
+collections: # A list of collections the CMS should be able to edit
+  - name: 'header' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Header Module' # Used in the UI
+    delete: false # Prevent users from deleting documents in this collection
+    label_singular: 'header' # Used in the UI, ie: "New Post"
+    description: >
+      Main image at the top of the site & countdown
+    folder: '_header'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - {
+          label: 'Wedding Date',
+          name: 'date',
+          widget: 'datetime',
+          dateFormat: 'YYYY-MM-DD',
+          timeFormat: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+        tagname: ''
+      - { editorComponents: ['youtube'], label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+
+  - name: "metadata"
+    label: "Metadata & Navigation"
+    description: "Pages Metadatas"
+    folder: "src/metadata"
+    create: true
+    fields:
+      - {
+          label: MetaData's,
+          name: metadata,
+          required: true,
+          widget: list,
+          fields:
+            [
+              { label: "Meta Title", name: "metatitle", widget: "string" },
+              { label: "Title Template", name: "titleTemplate", widget: "hidden", default: "%s · Gilbert Lucas" },
+              { label: "About Description", name: metadesc, widget: 'markdown' },
+              { label: "Author", name: "author", widget: "hidden", default: "Gilbert lucas" },
+              { label: "url", name: "url", widget: "hidden", default: "https://gilbert.codes" },
+              { label: "siteUrl", name: "siteUrl", widget: "hidden", default: "https://gilbert.codes" },
+              {
+                label: Image,
+                name: image,
+                required: false,
+                hint: "Image for the page",
+                widget: image,
+              },
+              { label: "Owner", name: "owner", widget: "hidden", default: "Gilbertlucas" },
+              { label: "Page name", name: "pagetitle", widget: "string" },
+              { label: "twitterUsername", name: "url", widget: "hidden", default: "@gilbertlucas14" },
+              { label: "facebookAppID", name: "url", widget: "hidden", default: " " }
+            ]
+          }
+      - {
+          label: Menu Links,
+          name: menuLinks,
+          required: true,
+          widget: list,
+          fields:
+            [
+              { label: "Page Name", name: "name", widget: "string" },
+              { label: "Link to", name: link, widget: 'string' }
+            ]
+          }
+      - {
+          label: Social Channels,
+          name: socialChannels,
+          required: true,
+          widget: list,
+          fields:
+            [
+              { label: "Social Name", name: "name", widget: "string" },
+              { label: "Link to", name: link, widget: 'string' }
+            ]
+          }
+
+  - name: 'about'
+    label: 'About Us'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: 'groom'
+        label: 'Groom'
+        file: '_data/groom.json'
+        description: 'General Info'
+        fields:
+          - label: 'About the Groom'
+            name: about
+            widget: 'object'
+            fields:
+              - { label: 'Grooms Name', name: 'title', widget: 'string' }
+              - {
+                  label: 'Photo',
+                  name: thumb,
+                  widget: image,
+                  class: 'thumb',
+                  required: false,
+                }
+              - { label: 'Description', name: 'text', widget: 'text', hint: 'Plain text, not markdown' }
+      - name: 'bride'
+        label: 'Brides'
+        file: '_data/bride.json'
+        description: 'General Info'
+        fields:
+          - label: 'About the Bride'
+            name: about
+            widget: 'object'
+            fields:
+              - { label: 'Bride Name', name: 'title', widget: 'string' }
+              - {
+                  label: 'Photo',
+                  name: thumb,
+                  widget: image,
+                  class: 'thumb',
+                  required: false,
+                }
+              - { label: 'Description', name: 'text', widget: 'text', hint: 'Plain text, not markdown' }
+
+
+  - name: 'location'
+    label: 'Where and When'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: 'wherenandwhen'
+        label: 'Edit Address and Contact info'
+        file: '_data/whereandwhen.json'
+        description: 'General Info'
+        fields:
+          - label: "Where and When"
+            name: "loc"
+            widget: "object"
+            fields:
+              - {label: "Description", name: "name", widget: "markdown"}
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Description", name: "name", widget: "markdown"}
+  - name: 'rsvp'
+    label: 'RSVP'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: 'rsvpmessage'
+        label: 'Message'
+        file: '_data/rsvp.json'
+        description: 'Our Message'
+        fields:
+          - {label: "Message", name: "name", widget: "markdown"}
+  - name: 'footer'
+    label: 'Footer'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: 'footer'
+        label: 'Footer Message'
+        file: '_data/footer.json'
+        fields:
+          - {label: "Message", name: "name", widget: "markdown"}
