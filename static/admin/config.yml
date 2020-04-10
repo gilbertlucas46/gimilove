@@ -7,32 +7,35 @@ media_folder: static/img
 public_folder: /img
 
 collections: # A list of collections the CMS should be able to edit
-  - name: 'header' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'Header Module' # Used in the UI
+  - name: 'header'
+    label: 'Header Module'
     delete: false # Prevent users from deleting documents in this collection
-    label_singular: 'header' # Used in the UI, ie: "New Post"
-    description: >
-      Main image at the top of the site & countdown
-    folder: '_header'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
-      - {
-          label: 'Wedding Date',
-          name: 'date',
-          widget: 'datetime',
-          dateFormat: 'YYYY-MM-DD',
-          timeFormat: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
-        }
-      - label: 'Cover Image'
-        name: 'image'
-        widget: 'image'
-        required: false
-        tagname: ''
-      - { editorComponents: ['youtube'], label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+    editor:
+      preview: false
+    files:
+      - name: 'header'
+        label: 'Header'
+        description: 'Main image at the top of the site & countdown'
+        file: '_data/header.json'
+        slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+        summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+        create: true # Allow users to create new documents in this collection
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+          - {
+              label: 'Wedding Date',
+              name: 'date',
+              widget: 'datetime',
+              dateFormat: 'YYYY-MM-DD',
+              timeFormat: 'HH:mm',
+              format: 'YYYY-MM-DD HH:mm',
+            }
+          - label: 'Cover Image'
+            name: 'image'
+            widget: 'image'
+            required: false
+            tagname: ''
+          - { editorComponents: ['youtube'], label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
 
   - name: "metadata"
     label: "Metadata & Navigation"
