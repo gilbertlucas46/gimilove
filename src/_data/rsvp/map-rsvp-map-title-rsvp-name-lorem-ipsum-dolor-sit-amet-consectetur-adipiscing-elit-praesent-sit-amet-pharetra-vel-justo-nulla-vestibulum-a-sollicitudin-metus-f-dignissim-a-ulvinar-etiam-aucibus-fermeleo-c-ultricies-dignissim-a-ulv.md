@@ -1,4 +1,5 @@
 ---
+title: RSVP
 RSVP:
   title: RSVP
   name: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet
