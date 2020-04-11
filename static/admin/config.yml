@@ -9,33 +9,25 @@ public_folder: /img
 collections: # A list of collections the CMS should be able to edit
   - name: 'header'
     label: 'Header Module'
+    folder: "src/_data"
+    create: true
     delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
-    files:
-      - name: 'header'
-        label: 'Header'
-        description: 'Main image at the top of the site & countdown'
-        file: '_data/header.json'
-        slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-        summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
-        create: true # Allow users to create new documents in this collection
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
-          - {
-              label: 'Wedding Date',
-              name: 'date',
-              widget: 'datetime',
-              dateFormat: 'YYYY-MM-DD',
-              timeFormat: 'HH:mm',
-              format: 'YYYY-MM-DD HH:mm',
-            }
-          - label: 'Cover Image'
-            name: 'image'
-            widget: 'image'
-            required: false
-            tagname: ''
-          - { editorComponents: ['youtube'], label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - {
+          label: 'Wedding Date',
+          name: 'date',
+          widget: 'datetime',
+          dateFormat: 'YYYY-MM-DD',
+          timeFormat: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+        tagname: ''
+      - { editorComponents: ['youtube'], required: false, label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
 
   - name: "metadata"
     label: "Metadata & Navigation"
@@ -86,89 +78,52 @@ collections: # A list of collections the CMS should be able to edit
 
   - name: 'about'
     label: 'About Us'
-    delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
-    files:
-      - name: 'groom'
-        label: 'Groom'
-        file: '_data/groom.json'
-        description: 'General Info'
+    folder: 'src/_data'
+    create: true
+    description: 'Information about us'
+    fields:
+      - label: 'Info'
+        name: about
+        widget: 'object'
         fields:
-          - label: 'About the Groom'
-            name: about
-            widget: 'object'
-            fields:
-              - { label: 'Grooms Name', name: 'title', widget: 'string' }
-              - {
-                  label: 'Photo',
-                  name: thumb,
-                  widget: image,
-                  class: 'thumb',
-                  required: false,
-                }
-              - { label: 'Description', name: 'text', widget: 'text', hint: 'Plain text, not markdown' }
-      - name: 'bride'
-        label: 'Brides'
-        file: '_data/bride.json'
-        description: 'General Info'
-        fields:
-          - label: 'About the Bride'
-            name: about
-            widget: 'object'
-            fields:
-              - { label: 'Bride Name', name: 'title', widget: 'string' }
-              - {
-                  label: 'Photo',
-                  name: thumb,
-                  widget: image,
-                  class: 'thumb',
-                  required: false,
-                }
-              - { label: 'Description', name: 'text', widget: 'text', hint: 'Plain text, not markdown' }
+          - { label: 'Name', name: 'title', widget: 'string' }
+          - {
+              label: 'Photo',
+              name: image,
+              widget: image,
+              required: false,
+            }
+          - { label: 'Description', name: 'text', widget: 'text', hint: 'Plain text, not markdown' }
 
 
   - name: 'location'
     label: 'Where and When'
-    delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
-    files:
-      - name: 'wherenandwhen'
-        label: 'Update Address and Contact info'
-        file: '_data/whereandwhen.json'
-        description: 'General Info'
+    folder: 'src/_data'
+    create: true
+    description: 'Information location and contact'
+    fields:
+      - label: "Where and When"
+        name: "loc"
+        widget: "object"
         fields:
-          - label: "Where and When"
-            name: "loc"
-            widget: "object"
-            fields:
-              - {label: "Description", name: "name", widget: "markdown"}
-          - label: "Contact"
-            name: "contact"
-            widget: "object"
-            fields:
-              - {label: "Description", name: "name", widget: "markdown"}
+          - {label: "Description", name: "name", widget: "markdown"}
+      - label: "Contact"
+        name: "contact"
+        widget: "object"
+        fields:
+          - {label: "Description", name: "name", widget: "markdown"}
   - name: 'rsvp'
     label: 'RSVP'
     delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
-    files:
-      - name: 'rsvpmessage'
-        label: 'Message'
-        file: '_data/rsvp.json'
-        description: 'Our Message'
-        fields:
-          - {label: "Message", name: "name", widget: "markdown"}
+    folder: 'src/_data'
+    create: true
+    fields:
+      - {label: "Message", name: "name", widget: "markdown"}
+
   - name: 'footer'
     label: 'Footer'
     delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
-    files:
-      - name: 'footer'
-        label: 'Footer Message'
-        file: '_data/footer.json'
-        fields:
-          - {label: "Message", name: "name", widget: "markdown"}
+    folder: 'src/_data'
+    create: true
+    fields:
+      - {label: "Message", name: "name", widget: "markdown"}
