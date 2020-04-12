@@ -6,6 +6,10 @@ const CountdownContainer = styled.div`
   display: block;
 `;
 
+const CountPanel = styled.div`
+  background: white;
+`;
+
 const WeddingCountdown = ({ date }) => {
   const weddingDate = new Date(date);
   const present_date = new Date(); 
@@ -18,10 +22,38 @@ const WeddingCountdown = ({ date }) => {
       >
         {() => (
           <>
-            <Timer.Days /> days
-            <Timer.Hours /> hours
-            <Timer.Minutes /> minutes
-            <Timer.Seconds /> seconds
+            <CountPanel>
+              <div className="time">
+                <Timer.Days />
+              </div>
+              <div className="type">
+                days
+              </div>
+            </CountPanel>
+            <CountPanel>
+              <div className="time">
+                <Timer.Hours /> 
+              </div>
+              <div className="type">
+                hours
+              </div>
+            </CountPanel>
+            <CountPanel>
+              <div className="time">
+                <Timer.Minutes /> 
+              </div>
+              <div className="type">
+                minutes
+              </div>
+            </CountPanel>
+            <CountPanel>
+              <div className="time">
+                <Timer.Seconds /> 
+              </div>
+              <div className="type">
+                seconds
+              </div>
+            </CountPanel>
           </>
         )}
       </Timer>
