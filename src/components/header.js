@@ -56,6 +56,12 @@ const HeaderCaptions = styled.div`
   text-align: center;
 `;
 
+const CountdownContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 2em;
+`;
+
 const Header = ({ headerData }) => {
   return (
     <header>
@@ -68,8 +74,8 @@ const Header = ({ headerData }) => {
             <HeartDivider/>
           </div>
           <h3>{headerData.formatteddate}</h3>
-          <WeddingCountdown date={headerData.normaldate}/>
         </HeaderCaptions>
+        <CountdownContainer><WeddingCountdown date={headerData.normaldate}/></CountdownContainer>
       </HeaderImageContainer>
     </header>
   )  

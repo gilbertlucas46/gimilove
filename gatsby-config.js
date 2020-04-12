@@ -82,7 +82,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
-          families: ['Leckerli One', 'Noto Serif']
+          families: ['Leckerli One', 'Noto Serif', 'Ubuntu:700', 'Noto Serif']
         }
       }
     },
