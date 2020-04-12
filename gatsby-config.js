@@ -7,6 +7,22 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `media`,
+        path: path.join(__dirname, `static`, `img`),
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
@@ -14,33 +30,97 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/_data/`,
+        name: `about`,
+        path: `${__dirname}/src/_data/about`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `footer`,
+        path: `${__dirname}/src/_data/footer`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/static/img`,
+        name: `header`,
+        path: `${__dirname}/src/_data/header`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: path.join(__dirname, 'static', 'img'),
-        name: 'img',
+        name: `location`,
+        path: `${__dirname}/src/_data/location`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `rsvp`,
+        path: `${__dirname}/src/_data/rsvp`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `metadata`,
+        path: `${__dirname}/src/metadata`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [
+          // gatsby-remark-relative-images must
+          // go before gatsby-remark-image
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: "header" // Must match the source name ^
+            }
+          },
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: "media" // Must match the source name ^
+            }
+          },
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: "images" // Must match the source name ^
+            }
+          },
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: "img" // Must match the source name ^
+            }
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+        ],
       },
     },
     `gatsby-plugin-sass`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

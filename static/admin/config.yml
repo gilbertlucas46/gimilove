@@ -9,25 +9,30 @@ public_folder: /img
 collections: # A list of collections the CMS should be able to edit
   - name: 'header'
     label: 'Header Module'
-    folder: "src/_data"
+    folder: "src/_data/header"
     create: true
     delete: false # Prevent users from deleting documents in this collection
     fields:
-      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
-      - {
-          label: 'Wedding Date',
-          name: 'date',
-          widget: 'datetime',
-          dateFormat: 'YYYY-MM-DD',
-          timeFormat: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
-        }
-      - label: 'Cover Image'
-        name: 'image'
-        widget: 'image'
-        required: false
-        tagname: ''
-      - { editorComponents: ['youtube'], required: false, label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+      - { label: 'Module Name', name: 'title', widget: 'string', required: true }
+      - label: "Header"
+        name: "header_module"
+        widget: "object"
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+          - {
+              label: 'Wedding Date',
+              name: 'date',
+              widget: 'datetime',
+              dateFormat: 'YYYY-MM-DD',
+              timeFormat: 'HH:mm',
+              format: 'YYYY-MM-DD HH:mm',
+            }
+          - label: 'Cover Image'
+            name: 'image'
+            widget: 'image'
+            required: false
+            tagname: ''
+          - { editorComponents: ['youtube'], required: false, label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
 
   - name: "metadata"
     label: "Metadata & Navigation"
@@ -78,10 +83,11 @@ collections: # A list of collections the CMS should be able to edit
 
   - name: 'about'
     label: 'About Us'
-    folder: 'src/_data'
+    folder: 'src/_data/about'
     create: true
     description: 'Information about us'
     fields:
+      - { label: 'Module Name', name: 'title', widget: 'string', required: true }
       - label: 'Info'
         name: about
         widget: 'object'
@@ -98,10 +104,11 @@ collections: # A list of collections the CMS should be able to edit
 
   - name: 'location'
     label: 'Where and When'
-    folder: 'src/_data'
+    folder: 'src/_data/location'
     create: true
     description: 'Information location and contact'
     fields:
+      - { label: 'Module Name', name: 'title', widget: 'string', required: true }
       - label: "Where and When"
         name: "loc"
         widget: "object"
@@ -115,15 +122,25 @@ collections: # A list of collections the CMS should be able to edit
   - name: 'rsvp'
     label: 'RSVP'
     delete: false # Prevent users from deleting documents in this collection
-    folder: 'src/_data'
+    folder: 'src/_data/rsvp'
     create: true
     fields:
-      - {label: "Message", name: "name", widget: "markdown"}
+      - { label: 'Module Name', name: 'title', widget: 'string', required: true }
+      - label: "rsvp"
+        name: "RSVP"
+        widget: "object"
+        fields:
+          - {label: "Message", name: "name", widget: "markdown"}
 
   - name: 'footer'
     label: 'Footer'
     delete: false # Prevent users from deleting documents in this collection
-    folder: 'src/_data'
+    folder: 'src/_data/footer'
     create: true
     fields:
-      - {label: "Message", name: "name", widget: "markdown"}
+      - { label: 'Module Name', name: 'title', widget: 'string', required: true }
+      - label: "Footer"
+        name: "footer"
+        widget: "object"
+        fields:
+          - {label: "Message", name: "name", widget: "markdown"}
