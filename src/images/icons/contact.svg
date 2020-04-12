@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="87.522" height="76.436" viewBox="0 0 87.522 76.436">
+  <g id="Group_12" data-name="Group 12" transform="translate(-757.5 -3163.786)">
+    <path id="heart" d="M186.622,174.473a22.93,22.93,0,0,1-6.741,16.332l-37.02,37.031-37.02-37.02a23.1,23.1,0,0,1,32.675-32.675l4.345,4.345,4.345-4.345a23.064,23.064,0,0,1,39.416,16.332Z" transform="translate(658.4 3012.386)" fill="#f77f84"/>
+    <g id="contact" transform="translate(786 3182.145)">
+      <path id="Path_2" data-name="Path 2" d="M24.3,24.993C19,31.9,7.6,37.777,0,30.867L8.062,20.616l4.146,3.225,8.062-10.251-4.261-3.34L24.071,0C32.594,5.644,29.6,18.2,24.3,24.993Z" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

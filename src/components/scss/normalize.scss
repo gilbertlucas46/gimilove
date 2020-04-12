@@ -574,3 +574,29 @@ td,
 th {
   padding: 0;
 }
+
+html {
+  font: 112.5%/1.45em georgia, serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+/* ----------- Non-Retina Screens ----------- */
+@media (min-height:  568px) and (max-height: 700px){
+  html {
+    font: 70%/1.45em 'lessregular';
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font: 85%/1em 'lessregular' !important;
+  }
+  p {
+    line-height: 1.4 !important;
+  }
+}
+@media (min-width: 768px) and (max-width:1440px) {
+  html {
+    font: 100%/1.2em 'lessregular' !important;
+  }
+}
