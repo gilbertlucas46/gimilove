@@ -41,7 +41,7 @@ const WeddingCountdown = ({ date }) => {
           <>
             <CountPanel>
               <div className="time">
-                <Timer.Days />
+                <Timer.Days formatValue={(value) => `${(value < 10 ? `0${value}` : value)}`}/>
               </div>
               <div className="type">
                 days
@@ -49,7 +49,7 @@ const WeddingCountdown = ({ date }) => {
             </CountPanel>
             <CountPanel>
               <div className="time">
-                <Timer.Hours /> 
+                <Timer.Hours formatValue={(value) => `${(value < 10 ? `0${value}` : value)}`}/> 
               </div>
               <div className="type">
                 hours
@@ -57,7 +57,7 @@ const WeddingCountdown = ({ date }) => {
             </CountPanel>
             <CountPanel>
               <div className="time">
-                <Timer.Minutes /> 
+                <Timer.Minutes formatValue={(value) => `${(value < 10 ? `0${value}` : value)}`}/> 
               </div>
               <div className="type">
                 minutes
@@ -65,7 +65,7 @@ const WeddingCountdown = ({ date }) => {
             </CountPanel>
             <CountPanel>
               <div className="time">
-                <Timer.Seconds /> 
+                <Timer.Seconds formatValue={(value) => `${(value < 10 ? `0${value}` : value)}`}/> 
               </div>
               <div className="type">
                 seconds
