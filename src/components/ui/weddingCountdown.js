@@ -24,6 +24,7 @@ const CountPanel = styled.div`
   .type {
     font-family: 'Noto Serif', serif;
     color: #CC5D61;
+    text-transform: uppercase;
   }
 `;
 
