@@ -20,6 +20,7 @@ const CountPanel = styled.div`
     margin-bottom: .5em;
     margin-top: .7em;
     font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
   }
   .type {
     font-family: 'Noto Serif', serif;

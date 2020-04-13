@@ -8,6 +8,28 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Leckerli One`,
+            subsets: [`latin`],
+            variants: [`400`]
+          },
+          {
+            family: `Ubuntu`,
+            subsets: [`latin`],
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Noto Serif`,
+            subsets: [`latin`],
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -77,15 +99,7 @@ module.exports = {
           omitKeys: ['xmlnsDc', 'xmlnsCc', 'xmlnsRdf', 'xmlnsSvg', 'xmlnsSodipodi', 'xmlnsInkscape']
         }
       }
-    },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        custom: {
-          families: ['Leckerli One', 'Noto Serif', 'Ubuntu:700', 'Noto Serif']
-        }
-      }
-    },
+    }, 
     {
       resolve: `gatsby-plugin-build-date`,
       options: {
