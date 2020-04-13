@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { HeartDivider } from './ui/divider'
+import { DividerWhite } from './ui/divider'
 import WeddingCountdown from './ui/weddingCountdown'
 
 const HeaderImageContainer = styled.div`
@@ -71,7 +71,7 @@ const Header = ({ headerData }) => {
           <h1>{headerData.title}</h1>
           <h2>Are Getting Married</h2>
           <div className="divider divider---white">
-            <HeartDivider/>
+            <DividerWhite/>
           </div>
           <h3>{headerData.formatteddate}</h3>
         </HeaderCaptions>
