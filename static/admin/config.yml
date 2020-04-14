@@ -149,7 +149,6 @@ collections: # A list of collections the CMS should be able to edit
     label: 'Gallery'
     delete: false # Prevent users from deleting documents in this collection
     folder: 'src/_data/gallery'
-    slug: '{{slug}}'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string', default: 'Wedding Image', required: false }
