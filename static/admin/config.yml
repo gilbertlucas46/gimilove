@@ -144,3 +144,19 @@ collections: # A list of collections the CMS should be able to edit
         widget: "object"
         fields:
           - {label: "Message", name: "name", widget: "markdown"}
+
+  - name: 'gallery'
+    label: 'Gallery'
+    delete: false # Prevent users from deleting documents in this collection
+    folder: 'src/_data/gallery'
+    slug: '{{slug}}'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', default: 'Wedding Image', required: false }
+      - label: "Featured Image"
+        name: "thumbnail"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
+      - { label: 'Description', name: 'desc', widget: 'text', required: false }
