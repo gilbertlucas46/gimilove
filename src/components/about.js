@@ -17,7 +17,6 @@ const AboutCard  = styled.div`
     border-radius: 370px;
     overflow: hidden;
   }
-  }
   .captionContainer {
     text-align: center;
     h4 {
