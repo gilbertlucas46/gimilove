@@ -77,7 +77,7 @@ const About = () => {
             {allMarkdownRemark.edges.map((edge) => {
               const { frontmatter } = edge.node;
               return (
-                <AboutCard>
+                <AboutCard key={frontmatter.about.title}>
                   <div className="imageContainer">
                     <Img fluid={frontmatter.about.image.childImageSharp.fluid} />
                   </div>

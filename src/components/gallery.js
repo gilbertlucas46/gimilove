@@ -16,6 +16,10 @@ const CardContents  = styled.div`
   /* margin: 1em; */
 `;
 
+const CardModal  = styled.div`
+  /* margin: 1em; */
+`;
+
 const GALLERY_QUERY = graphql`
   query GALLERY_QUERY {
   allMarkdownRemark(
@@ -24,9 +28,16 @@ const GALLERY_QUERY = graphql`
     edges {
       node {
         frontmatter {
-          thumbnail {
+          thumb: thumbnail {
             childImageSharp {
               fluid(maxWidth: 370) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+          full: thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 1000) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
@@ -39,6 +50,14 @@ const GALLERY_QUERY = graphql`
 `;
 
 const Gallery = () => {
+  const [modalIsOpen,setIsOpen] = React.useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal(){
+    setIsOpen(false);
+  }
   return (
     <StaticQuery
       query={GALLERY_QUERY}
@@ -47,16 +66,21 @@ const Gallery = () => {
           <Title>Gallery</Title>
           <CardContents>
           <ResponsiveMasonry
-                columnsCountBreakPoints={{350: 1, 750: 3, 900: 5}}
-                gutter='15px'
+              columnsCountBreakPoints={{350: 1, 750: 3, 900: 5}}
+              gutter='15px'
             >
             <Masonry>
-              {allMarkdownRemark.edges.map((edge) => {
+              {allMarkdownRemark.edges.map((edge, index) => {
                 const { frontmatter } = edge.node;
                 return (
-                  <GalleryCard>
-                    <Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
-                  </GalleryCard>
+                  <div key={index}>
+                    <GalleryCard onClick={openModal}>
+                      <Img fluid={frontmatter.thumb.childImageSharp.fluid} />
+                    </GalleryCard>
+                    <CardModal>
+                      <Img fluid={frontmatter.full.childImageSharp.fluid} />
+                    </CardModal>
+                  </div>
                 )
               })}
             </Masonry>
