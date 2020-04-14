@@ -87,6 +87,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `gallery`,
+        path: `${__dirname}/src/_data/gallery`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `metadata`,
         path: `${__dirname}/src/metadata`,
       },
