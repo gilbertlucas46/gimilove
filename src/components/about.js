@@ -2,9 +2,9 @@ import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
 
-import Title from '../components/ui/titles'
+import Title from './ui/Titles'
 import styled from 'styled-components'
-import Wrapper from './wrapper'
+import Wrapper from './Wrapper'
 
 const AboutCard  = styled.div`
   width: 86%;

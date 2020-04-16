@@ -1,9 +1,9 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import About from '../components/about'
-import Gallery from '../components/gallery'
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import About from '../components/About'
+import Gallery from '../components/Gallery'
 
 const IndexPage = () => (
   <Layout>

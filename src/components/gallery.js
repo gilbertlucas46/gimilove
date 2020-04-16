@@ -1,11 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
-import Img from 'gatsby-image';
 
-import Title from '../components/ui/titles'
+import Title from '../components/ui/Titles'
 import styled from 'styled-components'
-import Wrapper from './wrapper'
-import Lightbox from './lightbox';
+import Wrapper from './Wrapper'
+import Lightbox from './Lightbox';
 import TriangleUp from '../images/triangle-up.svg';
 
 const GalleryCard  = styled.div`

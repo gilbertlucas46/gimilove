@@ -2,8 +2,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { DividerWhite } from './ui/divider'
-import WeddingCountdown from './ui/weddingCountdown'
+import { DividerWhite } from './ui/Divider'
+import WeddingCountdown from './ui/WeddingCountdown'
 
 const HeaderImageContainer = styled.div`
   height: 100vh;

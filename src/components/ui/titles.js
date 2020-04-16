@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DividerPink } from '../ui/divider'
+import { DividerPink } from './Divider'
 
 const TitleContainer = styled.h3`
   font-family: 'Leckerli One', cursive;
