@@ -35,7 +35,6 @@ export default class Lightbox extends Component {
   render() {
     const { Images } = this.props;
     const { selectedImage, showLightbox } = this.state;
-    console.log(Images);
     return (
       <Fragment>
         <LightboxContainer>
