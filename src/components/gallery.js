@@ -5,18 +5,9 @@ import Title from '../components/ui/Titles'
 import styled from 'styled-components'
 import Wrapper from './Wrapper'
 import Lightbox from './Lightbox';
-import TriangleUp from '../images/triangle-up.svg';
 
 const GalleryCard  = styled.div`
   margin: .2em;
-`;
-
-const Arrowup = styled.div`
-
-`;
-
-const Arrowdown = styled.div`
-
 `;
 
 const GalleryContainer  = styled.div`
