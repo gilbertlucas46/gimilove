@@ -147,7 +147,7 @@ collections: # A list of collections the CMS should be able to edit
 
   - name: 'gallery'
     label: 'Gallery'
-    delete: false # Prevent users from deleting documents in this collection
+    delete: true # Prevent users from deleting documents in this collection
     folder: 'src/_data/gallery'
     create: true
     fields:

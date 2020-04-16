@@ -22,9 +22,7 @@ const CardModal  = styled.div`
 
 const GALLERY_QUERY = graphql`
   query GALLERY_QUERY {
-  allMarkdownRemark(
-    filter: {fileAbsolutePath: {regex: "_data/(gallery)/.*.md$/"}}
-  ) {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "_data/(gallery)/.*.md$/"}}, limit: 15) {
     edges {
       node {
         frontmatter {
