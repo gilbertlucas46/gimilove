@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import HeartWhite from '../../images/icons/heart-white.svg';
-import HeartPink from '../../images/icons/heart.svg';
+import HeartWhite from '../../images/heart-white.svg';
+import HeartPink from '../../images/heart.svg';
 
 const DividerWhiteContainer = styled.div`
   position: relative;

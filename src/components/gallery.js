@@ -1,11 +1,12 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image';
 
 import Title from '../components/ui/titles'
 import styled from 'styled-components'
 import Wrapper from './wrapper'
 import Lightbox from './lightbox';
-import TriangleUp from '../images/icons/triangle-up.svg';
+import TriangleUp from '../images/triangle-up.svg';
 
 const GalleryCard  = styled.div`
   margin: .2em;
@@ -22,13 +23,32 @@ const Arrowdown = styled.div`
 const GalleryContainer  = styled.div`
   background-color: #F5F4ED;
   position: relative;
-  .arrow-up {
-    position: absolute;
-    background-image: url('../images/icons/triangle-up.svg');
-  }
   &:before {
-    content: '';
-    height: 25px;
+    background: linear-gradient(45deg,#ffffff 16px,transparent 0),linear-gradient(-45deg,#ffffff 16px,transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 32px 32px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 32px;
+    transform: rotate(180deg);
+  }
+  &:after {
+    background: linear-gradient(45deg,#ffffff 16px,transparent 0),linear-gradient(-45deg,#ffffff 16px,transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 32px 32px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 32px;
   }
 `;
 
@@ -92,8 +112,7 @@ const Gallery = () => {
     <StaticQuery
       query={GALLERY_QUERY}
       render={({ allMarkdownRemark }) => (
-        <GalleryContainer>
-          <Arrowup className="arrow-up"/>
+        <GalleryContainer className='galleryContainer'>
           <Wrapper>
             <Title>Gallery</Title>
             <CardContents>
