@@ -600,3 +600,13 @@ html {
     font: 100%/1.2em !important;
   }
 }
+p {
+  font-family: 'Noto Serif', serif;
+  color: #707070;
+  strong {
+    color: #000000;
+  }
+}
+h4, h3 {
+  font-family: 'Ubuntu', sans-serif;
+}

@@ -1,9 +1,14 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
+import styled from 'styled-components'
+import showdown from 'showdown'
 
 import Title from './ui/Titles'
-import styled from 'styled-components'
 import Wrapper from './Wrapper'
+import ContactIcon from '../images/contact.svg'
+import LocationIcon from '../images/location.svg'
+
+const converter = new showdown.Converter();
 
 const LocationCard  = styled.div`
     display: grid;
@@ -54,20 +59,17 @@ const Location = () => {
             {allMarkdownRemark.edges.map((edge) => {
               const { frontmatter } = edge.node;
               return (
-                <LocationCard key={frontmatter.loc.title}>
-                  {/*<div className="imageContainer">
-                    <Img fluid={frontmatter.Location.image.childImageSharp.fluid} />
+                <LocationCard key={frontmatter.loc.name}>
+                  <div>
+                    <LocationIcon/>
+                    <h3>Location</h3>
+                    <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(frontmatter.loc.name) }} />
                   </div>
-                  <div className="captionContainer">
-                    <h4>{frontmatter.Location.title}</h4>
-                    <p>{frontmatter.Location.text}</p>
-              </div>*/}
-                <div>
-                  <p>{frontmatter.loc.name}</p>
-                </div>
-                <div>
-                  <p>{frontmatter.contact.name}</p>
-                </div>
+                  <div>
+                    <ContactIcon/>
+                    <h3>Contact</h3>
+                    <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(frontmatter.contact.name) }} />
+                  </div>
                 </LocationCard>
               )
             })}

@@ -5,6 +5,7 @@ import SEO from "../components/SEO"
 import About from '../components/About'
 import Gallery from '../components/Gallery'
 import Location from '../components/Location'
+import RSVP from '../components/RSVP'
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <About/>
     <Gallery/>
     <Location/>
+    <RSVP/>
   </Layout>
 )
 
