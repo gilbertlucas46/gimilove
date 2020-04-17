@@ -5,6 +5,7 @@ import showdown from 'showdown'
 
 import Title from './ui/Titles'
 import Wrapper from './Wrapper'
+import RSVPForm from './ui/RSVPForm';
 
 
 const converter = new showdown.Converter();
@@ -50,6 +51,15 @@ const RSVP_QUERY = graphql`
           RSVP {
             title
             name
+            form {
+              title
+              guest {
+                title
+              }
+              attending {
+                title
+              }
+            }
           }
         }
       }
@@ -60,15 +70,6 @@ const RSVP_QUERY = graphql`
 
 
 const RSVP = () => {
-  const [items] = React.useState([
-    {
-      label: "Luke Skywalker",
-      value: "Luke Skywalker"
-    },
-    { label: "C-3PO", value: "C-3PO" },
-    { label: "R2-D2", value: "R2-D2" }
-  ]);
-  
   return (
     <StaticQuery
       query={RSVP_QUERY}
@@ -82,22 +83,7 @@ const RSVP = () => {
                 return (
                   <RSVPCard key={frontmatter.RSVP.title}>
                     <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(frontmatter.RSVP.name) }} />
-                    <form name="rsvp" netlify netlify-honeypot="bot-field">
-                      <input type="hidden" name="form-name" value="rsvp" />
-                      <input type="text" name="name" />
-                      <input type="email" name="email" />
-                      <select>
-                        {items.map(item => (
-                          <option
-                            key={item.value}
-                            value={item.value}
-                          >
-                            {item.label}
-                          </option>
-                        ))}
-                      </select>
-                      <textarea name="message"></textarea>
-                    </form>
+                    <RSVPForm forms={frontmatter.RSVP.form}/>
                   </RSVPCard>
                 )
               })}

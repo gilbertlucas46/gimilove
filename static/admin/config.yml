@@ -147,10 +147,6 @@ collections: # A list of collections the CMS should be able to edit
                 fields: 
                   - { label: "Name", name: "title",  widget: "string", default: "I will Attend" }
 
-
-
-
-
   - name: 'footer'
     label: 'Footer'
     delete: false # Prevent users from deleting documents in this collection
