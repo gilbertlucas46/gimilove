@@ -130,7 +130,26 @@ collections: # A list of collections the CMS should be able to edit
         name: "RSVP"
         widget: "object"
         fields:
-          - {label: "Message", name: "name", widget: "markdown"}
+          - { label: "Message", name: "name", widget: "markdown"}
+          - label: "Form"
+            name: "form"
+            widget: "object"
+            fields: 
+              - { label: "Name", name: "title", widget: "string" }
+              - label: "NUMBER OF GUESTS"
+                name: "guest"
+                widget: "list"
+                fields: 
+                  - { label: "Name", name: "title",  widget: "number", default: 1 }
+              - label: "YOU WILL ATTEND?"
+                name: "attending"
+                widget: "list"
+                fields: 
+                  - { label: "Name", name: "title",  widget: "string", default: "I will Attend" }
+
+
+
+
 
   - name: 'footer'
     label: 'Footer'
