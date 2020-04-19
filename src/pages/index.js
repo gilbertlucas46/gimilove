@@ -7,10 +7,10 @@ import Gallery from '../components/Gallery'
 import Location from '../components/Location'
 import RSVP from '../components/RSVP'
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({location}) => (
+  <Layout location={location}>
     <SEO title="Home" />
-    <About/>
+    <About location={location}/>
     <Gallery/>
     <Location/>
     <RSVP/>

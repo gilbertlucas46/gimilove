@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Button from '../ui/Button'
 
 const RSVPFormContainer  = styled.form`
     margin-top: 2em;
@@ -40,7 +41,7 @@ const FormFields = styled.div`
 const RSVPForm = ({forms}) => {
   console.log(forms)
   return (
-    <RSVPFormContainer name="rsvp" netlify netlify-honeypot="bot-field">
+    <RSVPFormContainer name="rsvp" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/thankyou">
       <input type="hidden" name="form-name" value="rsvp" />
       <FormFields>
         <p>
@@ -72,6 +73,9 @@ const RSVPForm = ({forms}) => {
           </select>
         </p>
       </FormFields>
+      <Button>
+        <button>Send</button>
+      </Button>
     </RSVPFormContainer>
   )
 }

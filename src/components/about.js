@@ -36,8 +36,13 @@ const AboutCard  = styled.div`
 
 const CardContents = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-column-gap: 1em;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 767px) {
+    grid-row-gap: 2em;
+  }
 `;
 
 const ABOUT_QUERY = graphql`
@@ -66,7 +71,7 @@ const ABOUT_QUERY = graphql`
 }
 `;
 
-const About = () => {
+const About = ({location}) => {
   return (
     <StaticQuery
       query={ABOUT_QUERY}

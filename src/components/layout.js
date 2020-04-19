@@ -4,7 +4,8 @@ import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Header from "./Header";
 
-import './scss/normalize.scss'
+import GlobalStyles from './ui/Global'
+import Footer from './Footer'
 
 const MainLayout = styled.main`
   
@@ -47,10 +48,12 @@ const Layout = ({ children, location }) => {
             const { frontmatter } = edge.node;
             return (
               <div key={frontmatter.header_module.normaldate}>
-                <Header headerData={frontmatter.header_module}/>
+                <Header headerData={frontmatter.header_module} location={location}/>
                 <MainLayout>
                   {children}
                 </MainLayout>
+                <Footer/>
+                <GlobalStyles/>
               </div>
             )
           })}

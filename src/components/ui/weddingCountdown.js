@@ -4,10 +4,17 @@ import Timer from "react-compound-timer";
 
 const CountdownContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 1em;
   max-width: 600px;
   margin: auto;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.1em;
+    grid-row-gap: 0.1em;
+  }
 `;
 
 const CountPanel = styled.div`
@@ -21,11 +28,17 @@ const CountPanel = styled.div`
     margin-top: .7em;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
+    @media (max-width: 767px) {
+      font-size: 1.5em; 
+    }
   }
   .type {
     font-family: 'Noto Serif', serif;
     color: #CC5D61;
     text-transform: uppercase;
+  }
+  @media screen {
+    background: rgba(255, 255, 255, 0.7215686274509804); 
   }
 `;
 
