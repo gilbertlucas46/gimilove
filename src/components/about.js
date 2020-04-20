@@ -7,15 +7,24 @@ import styled from 'styled-components'
 import Wrapper from './Wrapper'
 
 const AboutCard  = styled.div`
-  width: 86%;
-  padding: 0 1em;
   margin: auto;
+  @media (min-width: 768px) {
+    width: 86%;
+    padding: 0 1em;
+  }
   .imageContainer {
-    max-width: 370px;
-    max-height: 370px;
     margin: auto;
-    border-radius: 370px;
     overflow: hidden;
+    @media (max-width: 767px) {
+      max-width: 120px;
+      max-height: 120px;
+      border-radius: 120px;
+    }
+    @media (min-width: 768px) {
+      max-width: 370px;
+      max-height: 370px;
+      border-radius: 370px;
+    }
   }
   .captionContainer {
     text-align: center;
@@ -23,7 +32,7 @@ const AboutCard  = styled.div`
       font-family: 'Ubuntu', sans-serif;
       font-size: 1.6em;
       color: #323232;
-      margin-bottom: 0;
+      margin-bottom: .6em;
     }
     p {
       font-family: 'Noto Serif', serif;
@@ -37,11 +46,10 @@ const AboutCard  = styled.div`
 const CardContents = styled.div`
   display: grid;
   grid-column-gap: 1em;
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
+  grid-template-columns: 1fr 1fr;
   @media (max-width: 767px) {
     grid-row-gap: 2em;
+    padding: 0 1em;
   }
 `;
 

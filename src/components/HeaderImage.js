@@ -77,6 +77,9 @@ const HeaderCaptions = styled.div`
   left: 0;
   right: 0;
   text-align: center;
+  h4 {
+    margin-bottom: 1em;
+  }
 `;
 
 const CountdownContainer = styled.div`

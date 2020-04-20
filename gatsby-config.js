@@ -68,7 +68,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `header`,
-        path: `${__dirname}/src/_data/header`,
+        path: `${__dirname}/src/metadata`,
       },
     },
     {

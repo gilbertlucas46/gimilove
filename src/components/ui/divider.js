@@ -42,9 +42,8 @@ const DividerWhiteContainer = styled.div`
 
 const DividerPinkContainer = styled.div`
   position: relative;
-  margin: auto;
+  margin: .5em auto 1em auto;
   width: 130px;
-  margin-top: .5em;
   text-align: center;
   &:before, &:after {
     position: absolute;

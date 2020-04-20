@@ -9,7 +9,7 @@ public_folder: /img
 collections: # A list of collections the CMS should be able to edit
   - name: 'header'
     label: 'Header Module'
-    folder: "src/_data/header"
+    folder: "src/metadata"
     create: true
     delete: false # Prevent users from deleting documents in this collection
     fields:

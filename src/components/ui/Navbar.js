@@ -55,23 +55,14 @@ const Navigation = () => {
           <CollapseWrapper style={{
             transform: isOpen.interpolate({
               range: [0, 0.2, 0.3, 1],
-              output: [0, -20, 0, -200],
-            }).interpolate(openValue => `translate3d(0, ${openValue}px, 0`),
+              output: [0, 0, 0, 200],
+            }).interpolate(openValue => `translate3d(${openValue}px, 0, 0`),
           }}
           >
-            <NavLinks className={open ? "show" : ""} style={linkAnimation}>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
+          <NavLinks className={open ? "show" : ""} style={linkAnimation}>
+            <li>
+              <a href="#">Link</a>
+            </li>
           </NavLinks>
           </CollapseWrapper>
           
@@ -98,12 +89,12 @@ export default Navigation
 
 const NavBar = styled(animated.nav)`
   position: relative;
-  overflow: hidden;
   background-color: #F77F84;
 `
 
 const FlexContainer = styled.div`
-  max-width: 120rem;
+  max-width: 1100px;
+  margin: auto;
   display: flex;
   margin: auto;
   padding: 0 2rem;
@@ -128,7 +119,6 @@ const NavLinks = styled(animated.ul)`
     transition: all 300ms linear 0s;
     text-decoration: none;
     cursor: pointer;
-
     &:hover {
       color: #fdcb6e;
       border-bottom: 1px solid #fdcb6e;
@@ -138,9 +128,6 @@ const NavLinks = styled(animated.ul)`
     display: inline-block;
     width: 100%;
     text-align: right;
-  }
-  @media (max-width: 767px) {
-    display: none;
   }
   &.show {
     @media (max-width: 768px) {
@@ -157,7 +144,6 @@ const NavLinks = styled(animated.ul)`
 
 const BurgerWrapper = styled.div`
   margin: auto 0;
-
   @media (min-width: 769px) {
     display: none;
   }
@@ -168,7 +154,8 @@ const Wrapper = styled.div`
   padding-top: 0.7rem;
   cursor: pointer;
   display: block;
-
+  max-width: 1100px;
+  margin: auto;
   & span {
     background: #fdcb6e;
     display: block;
@@ -194,4 +181,13 @@ const Wrapper = styled.div`
   }
 `
 const CollapseWrapper = styled(animated.div)`
+  
+  @media (min-width: 768px) {
+    transform: none !important;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
 `;

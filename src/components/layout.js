@@ -13,9 +13,7 @@ const MainLayout = styled.main`
 
 const SEO_QUERY = graphql`
   query SEO_QUERY {
-  allMarkdownRemark(
-    filter: {fileAbsolutePath: {regex: "_data/(header)/.*.md$/"}}
-  ) {
+  allMarkdownRemark{
     edges {
       node {
         frontmatter {
@@ -30,6 +28,26 @@ const SEO_QUERY = graphql`
                 }
               }
             }
+          }
+          metadata {
+            siteUrl
+            pagetitle
+            author
+            url
+            author
+            metatitle
+            metadesc
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
+          }
+          menuLinks {
+            name
+            link
           }
         }
       }

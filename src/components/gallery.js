@@ -44,7 +44,6 @@ const GalleryContainer  = styled.div`
 
 const CardContents  = styled.div`
   display: grid;
-  margin-top: 2em;
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
