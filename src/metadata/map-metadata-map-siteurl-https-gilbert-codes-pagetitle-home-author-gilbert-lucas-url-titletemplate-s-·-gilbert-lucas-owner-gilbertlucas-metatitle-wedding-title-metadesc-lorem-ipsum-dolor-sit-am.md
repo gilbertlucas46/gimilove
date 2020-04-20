@@ -1,5 +1,5 @@
 ---
-title: Update Metadata & Navigation
+title: Update Metadata, Navigation, Header
 metadata:
   siteUrl: https://gilbert.codes
   pagetitle: home
@@ -15,6 +15,10 @@ metadata:
     Vivamus mattis massa in ipsum molestie, eu aliquet lectus pulvinar. Etiam
     sapien purus, vestibulum eu sollicitudin quis, ultrices vitae justo.
   image: /img/meta-data-image.jpg
+header_module:
+  date: 2021-01-11 04:38
+  title: Gilbert & Mia
+  image: /img/header-image.jpg
 menuLinks:
   - name: About US
     link: "#about"
