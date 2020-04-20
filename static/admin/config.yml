@@ -7,40 +7,14 @@ media_folder: static/img
 public_folder: /img
 
 collections: # A list of collections the CMS should be able to edit
-  - name: 'header'
-    label: 'Header Module'
-    folder: "src/metadata"
-    create: true
-    delete: false # Prevent users from deleting documents in this collection
-    fields:
-      - { label: 'Module Name', name: 'title', widget: 'string', required: true }
-      - label: "Header"
-        name: "header_module"
-        widget: "object"
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
-          - {
-              label: 'Wedding Date',
-              name: 'date',
-              widget: 'datetime',
-              dateFormat: 'YYYY-MM-DD',
-              timeFormat: 'HH:mm',
-              format: 'YYYY-MM-DD HH:mm',
-            }
-          - label: 'Cover Image'
-            name: 'image'
-            widget: 'image'
-            required: false
-            tagname: ''
-          - { editorComponents: ['youtube'], required: false, label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
-
   - name: "metadata"
-    label: "Metadata & Navigation"
-    description: "Pages Metadatas"
+    label: "Metadata, Navigation, Header"
+    description: "Edit Medata, Navigation, and the main Header"
     folder: "src/metadata"
+    delete: false
     create: false
     fields:
-      - { label: 'Update Metadata & Navigation', name: 'title', widget: 'string',  default: "Metadata & Navigation" }
+      - { label: 'Update Metadata, Navigation, Header', name: 'title', widget: 'string',  default: "Metadata & Navigation" }
       - label: "MetaData's"
         name: "metadata"
         widget: "object"
@@ -62,6 +36,26 @@ collections: # A list of collections the CMS should be able to edit
           - { label: "Page name", name: "pagetitle", widget: "string" }
           - { label: "twitterUsername", name: "url", widget: "hidden", default: "@gilbertlucas14" }
           - { label: "facebookAppID", name: "url", widget: "hidden", default: " " }
+
+      - label: "Header Module"
+        name: "header_module"
+        widget: "object"
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+          - {
+              label: 'Wedding Date',
+              name: 'date',
+              widget: 'datetime',
+              dateFormat: 'YYYY-MM-DD',
+              timeFormat: 'HH:mm',
+              format: 'YYYY-MM-DD HH:mm',
+            }
+          - label: 'Cover Image'
+            name: 'image'
+            widget: 'image'
+            required: false
+            tagname: ''
+          - { editorComponents: ['youtube'], required: false, label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
 
       - label: "Menu Links"
         name: "menuLinks"
