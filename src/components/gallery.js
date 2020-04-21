@@ -50,14 +50,14 @@ const CardContents  = styled.div`
   @media (min-width: 767px) and (max-width: 991px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  @media (min-width: 650px) and (max-width: 766px) {
+  @media (max-width: 766px) {
     grid-template-columns: 1fr 1fr;
-  }
-  @media (max-width: 649px) {
-    grid-template-columns: 1fr;
   }
   .gatsby-image-wrapper {
     max-height: 178px;
+    @media (max-width: 766px) {
+      max-height: 100px;
+    }
   }
 `;
 

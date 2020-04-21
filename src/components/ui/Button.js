@@ -13,6 +13,10 @@ const ButtonContainer = styled.div`
     min-width: 8rem;
     line-height: 52px;
     width: 90%;
+    @media (max-width: 767px) {
+      width: 100%;
+      max-width: 100%;
+    }
     &:hover {
       background-color: #d4363a;
       -webkit-transition: all 200ms ease-in;
@@ -30,6 +34,7 @@ const ButtonContainer = styled.div`
   a {
     padding: 0 1rem;
   }
+  margin-top: .5em;
   border-radius: 52px;
   min-width: 6rem;
   display: inline-block;
@@ -42,6 +47,10 @@ const ButtonContainer = styled.div`
   max-width: 14rem;
   overflow: hidden;
   width: 90%;
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 100%;
+  }
   &:hover {
     -webkit-transition: all 200ms ease-in;
     color: #fff;

@@ -3,8 +3,7 @@ import styled from "styled-components"
 import { useSpring, animated, config } from "react-spring"
 
 import Brand from "./Brand"
-
-const Navigation = () => {
+const Navigation = ({menuLinks, headerData}) => {
   
   const barAnimation = useSpring({
     from: { transform: "translate3d(0, -10rem, 0)" },
@@ -60,9 +59,7 @@ const Navigation = () => {
           }}
           >
           <NavLinks className={open ? "show" : ""} style={linkAnimation}>
-            <li>
-              <a href="#">Link</a>
-            </li>
+            {menuLinks.map((item) => <li key={item.name}><a href={item.link}>{item.name}</a></li>)}
           </NavLinks>
           </CollapseWrapper>
           
@@ -111,7 +108,7 @@ const NavLinks = styled(animated.ul)`
     display: inline-block;
   }
   & a {
-    color: #dfe6e9;
+    color: white;
     text-transform: uppercase;
     font-weight: 600;
     border-bottom: 1px solid transparent;
@@ -119,6 +116,8 @@ const NavLinks = styled(animated.ul)`
     transition: all 300ms linear 0s;
     text-decoration: none;
     cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
     &:hover {
       color: #fdcb6e;
       border-bottom: 1px solid #fdcb6e;

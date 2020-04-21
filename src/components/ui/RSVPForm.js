@@ -34,7 +34,7 @@ const FormFields = styled.div`
     border-radius: 4px;
     border: 1px solid #CACACA;
     text-indent: 10px;
-    margin-top: 10px;
+    margin: .8em 0;
   }
 `;
 

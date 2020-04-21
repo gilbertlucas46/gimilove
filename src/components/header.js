@@ -8,12 +8,15 @@ const HeaderContainer = styled.header`
   
 `;
 
-const Header = ({ headerData, location }) => {
+const Header = ({ headerData, location, menuLinks }) => {
   console.log(location)
   return (
     <HeaderContainer>
       {location.pathname === "/" ? <HeaderImage/> : ""}
-      <Navigation/>
+      <Navigation
+      menuLinks={menuLinks}
+      headerData={headerData}
+      />
     </HeaderContainer>
   )  
 }

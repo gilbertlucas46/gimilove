@@ -71,7 +71,10 @@ const Layout = ({ children, location }) => {
             const imageSource = frontmatter.metadata.image.childImageSharp.fluid.src;
             return (
               <div key={frontmatter.header_module.normaldate}>
-                <Header menuLinks={frontmatter.menuLinks} headerData={frontmatter.header_module} location={location}/>
+                <Header 
+                menuLinks={frontmatter.menuLinks} 
+                headerData={frontmatter.header_module} 
+                location={location}/>
                 <MainLayout>
                 <SEO
                 title={frontmatter.metadata.metatitle}
