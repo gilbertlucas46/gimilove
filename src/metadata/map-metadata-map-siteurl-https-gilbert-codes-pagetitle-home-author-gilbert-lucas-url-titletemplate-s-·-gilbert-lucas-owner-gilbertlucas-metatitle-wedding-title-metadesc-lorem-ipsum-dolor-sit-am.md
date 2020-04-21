@@ -8,12 +8,8 @@ metadata:
   titleTemplate: "%s · Gilbert Lucas"
   owner: Gilbertlucas
   metatitle: Wedding title :)
-  metadesc: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit
-    amet pharetra nunc, non scelerisque ligula. Cras vel justo nulla. Vestibulum
-    a sollicitudin metus, faucibus fermentum leo. Nulla ut purus vel nunc
-    ultricies dignissim at at nunc. Vivamus tempor eget lorem non commodo.
-    Vivamus mattis massa in ipsum molestie, eu aliquet lectus pulvinar. Etiam
-    sapien purus, vestibulum eu sollicitudin quis, ultrices vitae justo.
+  metadesc: Welcome to Gilbert & Mia Wedding Website! View photos, directions,
+    registry details and more.
   image: /img/meta-data-image.jpg
 header_module:
   date: 2021-01-11 04:38
