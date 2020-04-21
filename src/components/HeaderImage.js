@@ -96,7 +96,7 @@ const CountdownContainer = styled.div`
 const HEADER_IMAGE_QUERY = graphql`
   query HEADER_IMAGE_QUERY {
   allMarkdownRemark(
-    filter: {fileAbsolutePath: {regex: "_data/(header)/.*.md$/"}}
+    filter: {fileAbsolutePath: {regex: "/(metadata)/.*.md$/"}}
   ) {
     edges {
       node {

@@ -1,10 +1,23 @@
 const path = require('path');
 
+const url = 'https://gimilove.com';
+const title = 'Gilbert & Mia Wedding';
+const image = `${url}/src/images/facebook-coverphoto.jpg`;
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title,
+    image,
+    description: `Welcome to Gilbert & Mia Wedding Website! View photos, directions, registry details and more.`,
+    siteUrl: `https://gimilove.com`,
+    pagetitle: `home`,
+    author: `Gilbert lucas`,
+    url: ` `,
+    metatitle: `Wedding title`,
+    metadesc: `Welcome to Gilbert & Mia Wedding Website! View photos, directions, registry details and more.`,
+    titleTemplate: `%s · Gilbert & Mia Wedding`,
+    twitterUsername: '@gilbertlucas14',
+    facebookAppID: '',
   },
   plugins: [
     {
@@ -113,10 +126,10 @@ module.exports = {
       options: {
         formatAsDateString: true, // boolean, defaults to true - if false API will return unformatted string from new Date()
         formatting: {
-          format: 'dddd D MMMM YYYY', // string, defaults to "MM/DD/YYYY" - pass in any acceptable date-and-time format
+          format: 'dddd D MMMM YYYY', // string, defaults to `MM/DD/YYYY` - pass in any acceptable date-and-time format
           utc: false, // boolean, defaults to false - output time as UTC or not, following date-and-time API
         },
-        // locale: 'fr', // string, defaults to null, which date-and-time defaults as "en" - whether to localize the date or not, can use any available date-and-time localization
+        // locale: 'fr', // string, defaults to null, which date-and-time defaults as `en` - whether to localize the date or not, can use any available date-and-time localization
       },
     },
     {
@@ -137,25 +150,25 @@ module.exports = {
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              name: "header" // Must match the source name ^
+              name: `header` // Must match the source name ^
             }
           },
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              name: "media" // Must match the source name ^
+              name: `media` // Must match the source name ^
             }
           },
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              name: "images" // Must match the source name ^
+              name: `images` // Must match the source name ^
             }
           },
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              name: "img" // Must match the source name ^
+              name: `img` // Must match the source name ^
             }
           },
           {

@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Header from "./Header";
 
+import SEO from "./utils/seo/seo";
 import GlobalStyles from './ui/Global'
 import Footer from './Footer'
 
@@ -13,7 +14,9 @@ const MainLayout = styled.main`
 
 const SEO_QUERY = graphql`
   query SEO_QUERY {
-  allMarkdownRemark{
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/(metadata)/.*.md$/"}}
+  ){
     edges {
       node {
         frontmatter {
@@ -37,9 +40,10 @@ const SEO_QUERY = graphql`
             author
             metatitle
             metadesc
+            titleTemplate
             image {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 1000) {
                   src
                 }
               }
@@ -64,10 +68,20 @@ const Layout = ({ children, location }) => {
         <>
           {allMarkdownRemark.edges.map((edge) => {
             const { frontmatter } = edge.node;
+            const imageSource = frontmatter.metadata.image.childImageSharp.fluid.src;
             return (
               <div key={frontmatter.header_module.normaldate}>
-                <Header headerData={frontmatter.header_module} location={location}/>
+                <Header menuLinks={frontmatter.menuLinks} headerData={frontmatter.header_module} location={location}/>
                 <MainLayout>
+                <SEO
+                title={frontmatter.metadata.metatitle}
+                description={frontmatter.metadata.metadesc}
+                image={imageSource[0]}
+                pathname={location.pathname}
+                keywords={[
+                  `Gilbert and Mia Wedding`,
+                ]}
+              />
                   {children}
                 </MainLayout>
                 <Footer/>
