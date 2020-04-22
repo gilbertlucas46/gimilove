@@ -3,9 +3,9 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 import showdown from 'showdown'
 
-import Title from './ui/Titles'
-import Wrapper from './Wrapper'
-import RSVPForm from './ui/RSVPForm';
+import Title from './ui/titles.ui'
+import Wrapper from './wrapper.component'
+import RSVPForm from './ui/rsvp-form.ui';
 
 
 const converter = new showdown.Converter();

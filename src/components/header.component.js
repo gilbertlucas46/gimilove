@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components'
-import HeaderImage from './HeaderImage'
-import Navigation from './ui/Navbar'
+import HeaderImage from './header-image.component'
+import Navigation from './ui/navbar.ui'
 
 const HeaderContainer = styled.header`
   

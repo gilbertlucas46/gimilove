@@ -1,10 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 
-import Title from '../components/ui/Titles'
+import Title from '../components/ui/titles.ui'
 import styled from 'styled-components'
-import Wrapper from './Wrapper'
-import Lightbox from './Lightbox';
+import Wrapper from './wrapper.component'
+import Lightbox from './lightbox.component';
 
 const GalleryCard  = styled.div`
   margin: .2em;

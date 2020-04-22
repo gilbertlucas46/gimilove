@@ -2,9 +2,9 @@ import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
 
-import Title from './ui/Titles'
+import Title from './ui/titles.ui'
 import styled from 'styled-components'
-import Wrapper from './Wrapper'
+import Wrapper from './wrapper.component'
 
 const AboutCard  = styled.div`
   margin: auto;

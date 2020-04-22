@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { useSpring, animated, config } from "react-spring"
 
-import Brand from "./Brand"
+import Brand from "./brand.ui"
 const Navigation = ({menuLinks, headerData}) => {
   
   const barAnimation = useSpring({

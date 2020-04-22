@@ -3,8 +3,8 @@ import { StaticQuery, graphql } from "gatsby"
 
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { DividerWhite } from './ui/Divider'
-import WeddingCountdown from './ui/WeddingCountdown'
+import { DividerWhite } from './ui/divider.ui'
+import WeddingCountdown from './ui/weddingc-countdown.ui'
 
 
 const HeaderImageContainer = styled.div`

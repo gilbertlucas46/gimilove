@@ -2,8 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import Twitter from './twitter';
-import Facebook from './facebook';
+import Twitter from './twitter.utils';
+import Facebook from './facebook.utils';
 
 
 const SEO = ({ title, description, meta, keywords, lang, image, pathname, article }) => (

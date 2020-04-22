@@ -3,8 +3,8 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 import showdown from 'showdown'
 
-import Title from './ui/Titles'
-import Wrapper from './Wrapper'
+import Title from './ui/titles.ui'
+import Wrapper from './wrapper.component'
 import ContactIcon from '../images/contact.svg'
 import LocationIcon from '../images/location.svg'
 

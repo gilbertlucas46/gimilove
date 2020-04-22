@@ -2,11 +2,11 @@ import React from 'react'
 import { StaticQuery } from "gatsby"
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
-import Title from '../components/ui/titles'
+import Title from '../components/ui/titles.ui'
 import styled from 'styled-components'
-import Wrapper from '../components/wrapper'
-import Lightbox from '../components/Lightbox';
-import { GALLERY_QUERY } from '../components/Gallery'
+import Wrapper from '../components/wrapper.component'
+import Lightbox from '../components/lightbox.component';
+import { GALLERY_QUERY } from '../components/gallery.component'
 
 const GalleryCard  = styled.div`
   margin: .2em;

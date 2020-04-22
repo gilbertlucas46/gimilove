@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Wrapper from './Wrapper'
+import Wrapper from './wrapper.component'
 
 const FooterContainer = styled.footer`
  

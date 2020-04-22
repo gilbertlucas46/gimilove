@@ -1,11 +1,11 @@
 import React from "react"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import About from '../components/About'
-import Gallery from '../components/Gallery'
-import Location from '../components/Location'
-import RSVP from '../components/RSVP'
+import Layout from "../components/layout.component"
+import SEO from "../components/seo.component"
+import About from '../components/about.component'
+import Gallery from '../components/gallery.component'
+import Location from '../components/location.component'
+import RSVP from '../components/rsvp.component'
 
 const IndexPage = ({location}) => (
   <Layout location={location}>

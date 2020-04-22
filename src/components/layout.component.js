@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import Header from "./Header";
+import Header from "./header.component";
 
-import SEO from "./utils/seo/seo";
-import GlobalStyles from './ui/Global'
-import Footer from './Footer'
+import SEO from "./utils/seo/seo.utils";
+import GlobalStyles from './ui/global.ui'
+import Footer from './footer.component'
 
 const MainLayout = styled.main`
   
