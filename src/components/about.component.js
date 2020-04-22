@@ -49,7 +49,6 @@ const CardContents = styled.div`
   grid-template-columns: 1fr 1fr;
   @media (max-width: 767px) {
     grid-row-gap: 2em;
-    padding: 0 1em;
   }
 `;
 

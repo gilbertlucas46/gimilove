@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
+import Close from '../images/close.svg'
 
 const LightboxContainer = styled.div`
   /* display: grid;
@@ -50,7 +51,7 @@ export default class Lightbox extends Component {
         <Dialog aria-label="Our Photos">
           <Img fluid={Images.full.childImageSharp.fluid} />
           <button type="button" onClick={() => this.setState({ showLightbox: false })}>
-            Close
+            <Close/>
           </button>
         </Dialog>
         )}

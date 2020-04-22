@@ -399,6 +399,57 @@ p {
 h4, h3, select, input {
   font-family: 'Ubuntu', sans-serif;
 }
+[data-reach-dialog-overlay] {
+  z-index: 99;
+  background: hsla(341, 41%, 10%, 0.67);
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-reach-dialog-content] {
+  @media (max-width: 767px) {
+    width: 90%;
+    padding: 0;
+    position: relative;
+    background-color: transparent;
+    margin: auto;
+    button {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 39px;
+      height: 38px;
+      svg {
+        width: 36px;
+        height: 36px;
+        position: relative;
+        fill: #2d2d2d;
+      }
+      &:before {
+        content: '';
+        background-color: white;
+        height: 30px;
+        width: 30px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 30px;
+        display: block;
+        position: absolute;
+      }
+    }
+  }
+}
+
+.gatsby-image-wrapper {
+  border-radius: .5em;
+  overflow: hidden;
+}
 `;
 
 export default GlobalStyles;

@@ -6,7 +6,7 @@ const RSVPFormContainer  = styled.form`
     margin-top: 2em;
     @media (min-width: 992px) {
       max-width: 928px;
-      margin: auto;
+      margin: 2em auto auto auto;
     }
 `;
 const FormFields = styled.div`
