@@ -27,7 +27,7 @@ const Wrapper = styled.div`
     position: relative;
     width: 3.5rem;
     height: .4rem;
-    margin-bottom: .7rem;
+    margin-bottom: .4rem;
     transition: all ease-in-out 0.2s;
   }
 

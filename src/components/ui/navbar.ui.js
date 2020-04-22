@@ -95,6 +95,7 @@ const Hamburger = styled.div`
 const NavBar = styled(animated.nav)`
   position: relative;
   background-color: #F77F84;
+  z-index: 99;
   @media (max-width: 767px) {
     position: fixed;
     top: 0;
@@ -107,11 +108,14 @@ const FlexContainer = styled.div`
   margin: auto;
   margin: auto;
   justify-content: space-between;
-  height: 5rem;
   position: relative;
   @media (min-width: 768px) {
     display: flex; 
     padding: 0 2rem;
+    height: 5rem;
+  }
+  @media (max-width: 767px) {
+    height: 4rem;
   }
 `
 
@@ -122,21 +126,25 @@ const NavLinks = styled(animated.ul)`
   margin: auto 0;
   li {
     display: inline-block;
+    @media (max-width: 767px) {
+      display: block; 
+    }
   }
   & a {
     color: white;
     text-transform: uppercase;
     font-weight: 600;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     margin: 0 1.5rem;
     transition: all 300ms linear 0s;
     text-decoration: none;
     cursor: pointer;
     font-family: 'Ubuntu', sans-serif;
     font-weight: normal;
+    padding: .5em 0px;
     &:hover {
-      color: #fdcb6e;
-      border-bottom: 1px solid #fdcb6e;
+      color: #8c363b;
+      border-bottom: 2px solid #8c363b;
     }
   }
   @media (min-width: 768px) {
@@ -144,15 +152,20 @@ const NavLinks = styled(animated.ul)`
     width: 100%;
     text-align: right;
   }
+  @media (max-width: 767px) {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+  }
   &.show {
-    @media (max-width: 768px) {
-      display: block;
-      width: 100%;
-      height: 100vh;
-      position: absolute;
-      left: 0;
-      text-align: center;
-      line-height: 3em;
+    height: 100vh;
+    line-height: 3em;
+    li {
+      @media (max-width: 767px) {
+        margin: 4% 0;
+      }
     }
   }
 `
@@ -183,9 +196,9 @@ const Wrapper = styled.div`
     background: white;
     display: block;
     position: relative;
-    width: 2rem;
+    width: 1.8rem;
     height: 0.2em;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.4em;
     transition: all ease-in-out 0.2s;
   }
 
@@ -195,12 +208,12 @@ const Wrapper = styled.div`
 
   .open span:nth-child(3) {
     transform: rotate(45deg);
-    top: -15px;
+    top: -11px;
   }
 
   .open span:nth-child(1) {
     transform: rotate(-45deg);
-    top: 15px;
+    top: 11px;
   }
 `
 const CollapseWrapper = styled(animated.div)`
