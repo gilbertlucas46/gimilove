@@ -54,8 +54,8 @@ const Navigation = ({menuLinks, headerData}) => {
           <CollapseWrapper style={{
             transform: isOpen.interpolate({
               range: [0, 0.2, 0.3, 1],
-              output: [0, 0, 0, 200],
-            }).interpolate(openValue => `translate3d(${openValue}px, 0, 0`),
+              output: [0, -20, 0, -200],
+            }).interpolate(openValue => `translate3d(0, ${openValue}px, 0`),
           }}
           >
           <NavLinks className={open ? "show" : ""} style={linkAnimation}>
@@ -69,11 +69,11 @@ const Navigation = ({menuLinks, headerData}) => {
               className={open === true ? "active" : ""}
               onClick={() => setOpen(!open)}
             >
-              <div className={open ? "open" : "" }>
+              <Hamburger className={open ? "open" : "" }>
                 <span>&nbsp;</span>
                 <span>&nbsp;</span>
                 <span>&nbsp;</span>
-              </div>
+              </Hamburger>
             </Wrapper>
           </BurgerWrapper>
         </FlexContainer>
@@ -84,23 +84,39 @@ const Navigation = ({menuLinks, headerData}) => {
 
 export default Navigation
 
+const Hamburger = styled.div`
+  /* position: absolute;
+  height: 32px;
+  top: 0;
+  bottom: 0;
+  margin: auto; */
+`;
+
 const NavBar = styled(animated.nav)`
   position: relative;
   background-color: #F77F84;
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    width: 100%; 
+  }
 `
 
 const FlexContainer = styled.div`
   max-width: 1100px;
   margin: auto;
-  display: flex;
   margin: auto;
-  padding: 0 2rem;
   justify-content: space-between;
   height: 5rem;
   position: relative;
+  @media (min-width: 768px) {
+    display: flex; 
+    padding: 0 2rem;
+  }
 `
 
 const NavLinks = styled(animated.ul)`
+  background-color: #F77F84;
   justify-self: end;
   list-style-type: none;
   margin: auto 0;
@@ -142,7 +158,15 @@ const NavLinks = styled(animated.ul)`
 `
 
 const BurgerWrapper = styled.div`
-  margin: auto 0;
+  position: absolute;
+  top: 0;
+  right: 1em;
+  bottom: 0;
+  margin: auto;
+  height: 51px;
+  > div {
+    position: unset;
+  }
   @media (min-width: 769px) {
     display: none;
   }
@@ -156,12 +180,12 @@ const Wrapper = styled.div`
   max-width: 1100px;
   margin: auto;
   & span {
-    background: #fdcb6e;
+    background: white;
     display: block;
     position: relative;
     width: 2rem;
     height: 0.2em;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.6em;
     transition: all ease-in-out 0.2s;
   }
 

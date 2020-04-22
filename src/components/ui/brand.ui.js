@@ -27,4 +27,8 @@ const BrandContainer = styled.div`
   svg {
     height: 66px;
   }
+  @media (max-width: 767px) {
+    justify-content: end;
+    padding-left: 1em;
+  }
 `;
