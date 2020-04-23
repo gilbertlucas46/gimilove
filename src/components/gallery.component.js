@@ -104,7 +104,7 @@ const Gallery = () => {
       query={GALLERY_QUERY}
       render={({ allMarkdownRemark }) => (
         <GalleryContainer className='galleryContainer'>
-          <Wrapper>
+          <Wrapper id="gallery">
             <Title>Gallery</Title>
             <CardContents>
               {allMarkdownRemark.edges.map((edge, index) => {

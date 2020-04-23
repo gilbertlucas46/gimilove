@@ -75,7 +75,7 @@ const RSVP = () => {
       query={RSVP_QUERY}
       render={({ allMarkdownRemark }) => (
         <RSVPContainer>
-          <Wrapper>
+          <Wrapper id="rsvp">
             <Title>RSVP</Title>
             <CardContents>
               {allMarkdownRemark.edges.map((edge) => {

@@ -83,7 +83,7 @@ const About = ({location}) => {
     <StaticQuery
       query={ABOUT_QUERY}
       render={({ allMarkdownRemark }) => (
-        <Wrapper>
+        <Wrapper id="about">
           <Title>About Us</Title>
           <CardContents>
             {allMarkdownRemark.edges.map((edge) => {

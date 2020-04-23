@@ -10,9 +10,9 @@ const WrapperStyle = styled.section`
   }
 `;
 
-const Wrapper = ({ children }) => {
+const Wrapper = ({ children, id }) => {
   return (
-    <WrapperStyle>
+    <WrapperStyle id={id}>
       { children }
     </WrapperStyle>
   )
