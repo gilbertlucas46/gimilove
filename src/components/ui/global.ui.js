@@ -410,18 +410,25 @@ h4, h3, select, input {
   justify-content: center;
 }
 [data-reach-dialog-content] {
-  @media (max-width: 767px) {
-    width: 90%;
+    width: 80vw;
     padding: 0;
     position: relative;
     background-color: transparent;
     margin: auto;
+    @media (min-width: 1200px) and (max-width: 1600) {
+      width: 80vw;
+    }
+    @media (min-width: 1601px) {
+      width: 50vw;
+    }
     button {
       position: absolute;
       top: -14px;
       right: -14px;
       width: 39px;
       height: 38px;
+      background-color: transparent;
+      border: 0;
       svg {
         width: 36px;
         height: 36px;
@@ -443,13 +450,8 @@ h4, h3, select, input {
         position: absolute;
       }
     }
-  }
 }
 
-.gatsby-image-wrapper {
-  border-radius: .5em;
-  overflow: hidden;
-}
 `;
 
 export default GlobalStyles;

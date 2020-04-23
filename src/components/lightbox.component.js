@@ -7,9 +7,12 @@ import '@reach/dialog/styles.css';
 import Close from '../images/close.svg'
 
 const LightboxContainer = styled.div`
-  /* display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 5px; */
+ .gatsby-image-wrapper {
+  border-radius: .5em;
+  overflow: hidden;
+  border: 2px solid white;
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.2196078431372549);
+}
 `;
 
 const PreviewButton = styled.div`

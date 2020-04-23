@@ -87,7 +87,10 @@ const Layout = ({ children, location }) => {
               />
                   {children}
                 </MainLayout>
-                <Footer/>
+                <Footer
+                menuLinks={frontmatter.menuLinks} 
+                headerData={frontmatter.header_module} 
+                location={location}/>
                 <GlobalStyles/>
               </div>
             )

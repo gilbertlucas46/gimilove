@@ -46,6 +46,8 @@ const CardContents  = styled.div`
   display: grid;
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
   }
   @media (min-width: 767px) and (max-width: 991px) {
     grid-template-columns: 1fr 1fr 1fr;
