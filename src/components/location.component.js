@@ -19,6 +19,7 @@ const LocationCard  = styled.div`
     }
     @media (max-width: 766px) {
       grid-template-columns: 1fr;
+      grid-row-gap: 1em;
     }
 `;
 

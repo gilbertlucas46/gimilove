@@ -35,6 +35,12 @@ const FooterNav = styled.ul`
       text-decoration: none;
       font-size: 1.2em;
       text-transform: uppercase;
+      &:hover {
+        cursor: pointer;
+      }
+      @media (max-width: 767px) {
+        font-size: .8em;
+      }
     }
   }
 `;

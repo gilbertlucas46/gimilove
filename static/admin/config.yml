@@ -55,6 +55,16 @@ collections: # A list of collections the CMS should be able to edit
             widget: 'image'
             required: false
             tagname: ''
+          - label: 'Cover Image Desktop'
+            name: 'imageDesktop'
+            widget: 'image'
+            required: false
+            tagname: ''
+          - label: 'Cover Image Mobile'
+            name: 'imageMobile'
+            widget: 'image'
+            required: false
+            tagname: ''
           - { editorComponents: ['youtube'], required: false, label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
 
       - label: "Menu Links"

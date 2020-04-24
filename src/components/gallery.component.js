@@ -1,10 +1,12 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby";
 
 import Title from '../components/ui/titles.ui'
 import styled from 'styled-components'
 import Wrapper from './wrapper.component'
 import Lightbox from './lightbox.component';
+import Button from './ui/button.ui'
 
 const GalleryCard  = styled.div`
   margin: .2em;
@@ -118,6 +120,16 @@ const Gallery = () => {
                 )
               })}
             </CardContents>
+            <Button>
+                <Link
+                  to='gallery'
+                  activeClassName="active"
+                  aria-label="Gallery Page"
+                  alt="Gallery Page"
+                >
+                  View More
+                </Link>
+              </Button>
           </Wrapper>
         </GalleryContainer>
       )}
