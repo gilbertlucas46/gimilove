@@ -56,6 +56,7 @@ module.exports = {
         path: path.join(__dirname, `static`, `img`),
       },
     },
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-netlify`,

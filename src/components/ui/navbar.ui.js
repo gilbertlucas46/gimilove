@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { useSpring, animated, config } from "react-spring"
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 import Brand from "./brand.ui"
 const Navigation = ({menuLinks, headerData}) => {
@@ -59,7 +60,7 @@ const Navigation = ({menuLinks, headerData}) => {
           }}
           >
           <NavLinks className={open ? "show" : ""} style={linkAnimation}>
-            {menuLinks.map((item) => <li key={item.name}><a href={item.link}>{item.name}</a></li>)}
+            {menuLinks.map((item) => <li key={item.name}><a onClick={() => scrollTo(item.link)}>{item.name}</a></li>)}
           </NavLinks>
           </CollapseWrapper>
           

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Wrapper from './wrapper.component'
 import Flower from '../images/flower.svg'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 const FooterContainer = styled.footer`
   background-color:#2B2B28;
@@ -48,7 +49,7 @@ const Footer = ({children, menuLinks, }) => {
           {menuLinks.map((item) => {
             return (
               <>
-                <li><a href={item.link}>{item.name}</a></li>
+                <li><a onClick={() => scrollTo(item.link)}>{item.name}</a></li>
               </>
             )
           })}
