@@ -17,12 +17,14 @@ const ButtonContainer = styled.div`
       width: 100%;
       max-width: 100%;
     }
+    @media (min-width: 992px) {
+      max-width: 200px;
+    }
     &:hover {
       background-color: #d4363a;
       -webkit-transition: all 200ms ease-in;
       color: #fff;
       text-align: center;
-      max-width: 14rem;
       border: 0;
       cursor: pointer;
       border-radius: 52px;
@@ -44,9 +46,8 @@ const ButtonContainer = styled.div`
   letter-spacing: 2px;
   -webkit-transition: all 200ms ease-in;
   text-align: center;
-  max-width: 14rem;
   overflow: hidden;
-  width: 90%;
+  width: 100%;
   @media (max-width: 767px) {
     width: 100%;
     max-width: 100%;
@@ -55,7 +56,6 @@ const ButtonContainer = styled.div`
     -webkit-transition: all 200ms ease-in;
     color: #fff;
     text-align: center;
-    max-width: 14rem;
     cursor: pointer;
     a {
       color: #ffff;

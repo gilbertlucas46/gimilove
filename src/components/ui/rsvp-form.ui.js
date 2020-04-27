@@ -36,6 +36,7 @@ const FormFields = styled.div`
     text-indent: 10px;
     margin: .8em 0;
   }
+  
 `;
 
 const RSVPForm = ({forms}) => {

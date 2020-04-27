@@ -42,6 +42,11 @@ const GalleryContainer  = styled.div`
     width: 100%;
     height: 32px;
   }
+  a {
+    &:hover {
+      color: #861c35;
+    }
+  }
 `;
 
 const CardContents  = styled.div`
