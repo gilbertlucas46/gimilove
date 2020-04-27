@@ -66,6 +66,22 @@ const HeaderImageContainer = styled.div`
       letter-spacing: 5px;
     }
   }
+  .desktopHeaderImage {
+    @media (min-width: 768px) {
+      display: block;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .mobileHeaderImage {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
 `;
 
 const HeaderCaptions = styled.div`
@@ -105,7 +121,14 @@ const HEADER_IMAGE_QUERY = graphql`
             title
             normaldate: date(formatString: "MM/DD/YYYY")
             formatteddate: date(formatString: "MMMM Do, YYYY")
-            image {
+            imageDesktop {
+              childImageSharp {
+                fluid(maxWidth: 2256) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+            imageMobile {
               childImageSharp {
                 fluid(maxWidth: 2256) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -130,7 +153,8 @@ const HeaderImage = () =>  {
           const { frontmatter } = edge.node;
           return (
             <HeaderImageContainer key={frontmatter.header_module.title}>
-              <Img fluid={frontmatter.header_module.image.childImageSharp.fluid} />
+              <Img className="desktopHeaderImage" fluid={frontmatter.header_module.imageDesktop.childImageSharp.fluid} />
+              <Img className="mobileHeaderImage" fluid={frontmatter.header_module.imageMobile.childImageSharp.fluid} />
               <HeaderCaptions>
                 <h1>{frontmatter.header_module.title}</h1>
                 <h2>Are Getting Married</h2>
