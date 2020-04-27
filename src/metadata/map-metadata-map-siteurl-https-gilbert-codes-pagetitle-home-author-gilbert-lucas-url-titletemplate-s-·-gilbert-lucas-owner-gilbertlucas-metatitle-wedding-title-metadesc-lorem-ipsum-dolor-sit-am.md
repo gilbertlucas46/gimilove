@@ -15,6 +15,8 @@ header_module:
   date: 2021-01-11 04:38
   title: Gilbert & Mia
   image: /img/header-image.jpg
+  imageDesktop: /img/header-image.jpg
+  imageMobile: /img/header-image-mobile.jpg
 menuLinks:
   - name: About US
     link: "#about"
