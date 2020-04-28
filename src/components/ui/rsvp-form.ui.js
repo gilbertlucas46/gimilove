@@ -51,7 +51,7 @@ const RSVPForm = ({forms}) => {
         </p>
         <p>
           <label htmlFor="guest">NUMBER OF GUESTS:</label>
-            <select id="guest">
+            <select id="guest" name="number of guest">
               {forms.guest.map((item) => (
                 <option
                   key={item.title}
@@ -63,7 +63,7 @@ const RSVPForm = ({forms}) => {
         </p>
         <p>
           <label htmlFor="attend">YOU WILL ATTEND..</label>
-            <select id="attend">
+            <select id="attend" name="will attend">
             {forms.attending.map((item) => (
               <option
                 key={item.title}
