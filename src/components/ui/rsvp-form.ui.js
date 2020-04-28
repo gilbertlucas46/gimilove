@@ -46,11 +46,11 @@ const RSVPForm = ({forms}) => {
       <input type="hidden" name="form-name" value="rsvp" />
       <FormFields>
         <p>
-          <label htmlFor={forms.title}>{forms.title}:</label>
+          <label htmlFor={forms.title}>{forms.title}</label>
           <input type="text" name="name"/>
         </p>
         <p>
-          <label htmlFor="guest">NUMBER OF GUESTS:</label>
+          <label htmlFor="guest">NUMBER OF GUESTS</label>
             <select id="guest" name="number of guest">
               {forms.guest.map((item) => (
                 <option
@@ -62,7 +62,7 @@ const RSVPForm = ({forms}) => {
             </select>
         </p>
         <p>
-          <label htmlFor="attend">YOU WILL ATTEND..</label>
+          <label htmlFor="attend">WILL YOU ATTEND?</label>
             <select id="attend" name="will attend">
             {forms.attending.map((item) => (
               <option
